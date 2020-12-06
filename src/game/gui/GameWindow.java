@@ -33,7 +33,7 @@ public class GameWindow extends JPanel {
 		for (int x = Game.FIELD_WIDTH; x <= Game.FIELD_WIDTH * 2; x += Game.FIELD_WIDTH) {
 			g2D.drawLine(x, 0, x, Game.HEIGHT);
 		}
-		for (int y = Game.FIELD_WIDTH; y <= Game.FIELD_WIDTH * 2; y += Game.FIELD_WIDTH) {
+		for (int y = Game.FIELD_HEIGHT; y <= Game.FIELD_HEIGHT * 2; y += Game.FIELD_HEIGHT) {
 			g2D.drawLine(0, y, Game.WIDTH, y);
 		}
 		
@@ -41,8 +41,8 @@ public class GameWindow extends JPanel {
 			for (int y = 0; y < 3; y++) {
 				int field = game.getFields()[x][y];
 				if (field != Game.NOBODY) {
-					g2D.drawImage(Resources.letters[field - 1], x * Game.FIELD_WIDTH, y * Game.FIELD_HEIGHT, 
-							Game.FIELD_WIDTH, Game.FIELD_HEIGHT, null);
+					g2D.drawImage(Resources.letters[field - 1], x * Game.FIELD_WIDTH , y * Game.FIELD_HEIGHT, 
+							Game.FIELD_WIDTH - 5, Game.FIELD_HEIGHT - 5, null);
 				}
 			}
 		}

@@ -33,12 +33,13 @@ public abstract class Game {
 	}
 	
 	protected void showWinner (int winner) {
-		if (winner == Game.NOBODY) {
-			JOptionPane.showMessageDialog(null, "TIE! ");
+		if (winner == Game.PLAYER_ONE) {
+			JOptionPane.showMessageDialog(null, "The player " + winner + " has won the game! ");
 			
-		}else {
-		
-		JOptionPane.showMessageDialog(null, "The player " + winner + " has won the game! ");
+		} else if (winner == Game.PLAYER_TWO) {
+			JOptionPane.showMessageDialog(null, "The player " + winner + " has won the game! ");
+		} else {
+			JOptionPane.showMessageDialog(null, "TIE!");
 		}
 	}
 	
