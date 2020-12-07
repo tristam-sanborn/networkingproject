@@ -93,12 +93,14 @@ public class GameServer extends Game {
 				}
 				if(emptyCount == 9) {
 					endGame(winner) ;
+					gameWindow.repaint();	// after we done the PacketUpdate we need to update
 				}
 			
 			}
 		}
+		}
 		
-	}
+//	}
 	
 	
 	
@@ -115,7 +117,7 @@ public class GameServer extends Game {
 	
 	private int checkWinner() {	// check if any player wins the game
 		
-		for (int player = Game.FIRST_PLAYER; player <= Game.SECOND_PLAYER; player++) { // check player 1 and player 2
+		for (int player = Game.FIRST_PLAYER; player <= Game.SECOND_PLAYER;  player++) { // check player 1 and player 2
 			for (int y = 0; y < 3; y++) {	// check each row
 				int countPlayer = 0 ;	// update count
 				
@@ -155,7 +157,7 @@ public class GameServer extends Game {
 			countPlayer = 0;
 			
 			for (int coordinate = 0; coordinate < 3; coordinate++) {	// check each coordinate
-				if (gameFields[2 - coordinate][coordinate] == player) {	//check first diagonal
+				if (gameFields[2 - coordinate][coordinate] == player) {	//check second diagonal
 					countPlayer++ ;
 				}
 			}

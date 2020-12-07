@@ -51,7 +51,7 @@ public abstract class Game {	// abstract class to handle class server and class 
 	
 	
 	
-	protected void displayWinner (int winner) {
+	protected void displayWinner (int winner) {	// show which player wins the game
 		
 		if (winner == Game.FIRST_PLAYER) {
 			
@@ -61,7 +61,7 @@ public abstract class Game {	// abstract class to handle class server and class 
 			
 			JOptionPane.showMessageDialog(null, "Player " + winner + " has won the game! ");
 		
-		} else {
+		} else if (winner == Game.NO_WINNER){
 			
 			JOptionPane.showMessageDialog(null, "DRAW!") ;
 		}

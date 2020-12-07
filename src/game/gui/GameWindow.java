@@ -11,10 +11,10 @@ import javax.swing.JPanel;
 import game.Game;
 import game.res.Resources;
 
-//JPanel is helping us to render the game interface
+// JPanel is helping us to render the game interface
 public class GameWindow extends JPanel {
 
-	//SerialVersionUID is used to ensure that during deserialization the same class (that was used during serialize process) is loaded.
+	// serialVersionUID is used to ensure that during deserialization the same class (that was used during serialize process) is loaded.
 	private static final long serialVersionUID = -1463491557462486617L;
 
 	private Game game;	// its constructor take in the Game class

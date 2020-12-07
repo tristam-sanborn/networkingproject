@@ -25,9 +25,10 @@ public class Window extends JFrame { //JFrame class create a window for us
 		
 		getContentPane().setPreferredSize(new Dimension(width, height));
 		
+		// The pack() method is defined in Window class in Java and it sizes the frame so that all its contents are at or above their preferred sizes
 		pack();
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Close the window with program
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	// close the window with program
 		
 		setLocationRelativeTo(null);	// put the window in the middle of our screen
 		
