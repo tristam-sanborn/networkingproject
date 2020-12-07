@@ -4,21 +4,21 @@ import java.io.IOException;
 import java.net.Socket;
 
 import game.net.Connection;
-import game.packets.ClientPlayPacket;
-import game.packets.GameEndPacket;
+import game.packets.ClientPacket;
+import game.packets.EndGamePacket;
 import game.packets.UpdatePacket;
 
-public class ClientGame extends Game{
+public class GameClient extends Game{
 	
-	private Socket socket;
+	private Socket clientSocket;
 	
-	private Connection connection;
+	private Connection clientConnection;
 	
-	public ClientGame() {
+	public GameClient() {
 		super (Game.PLAYER_TWO);	
 		try {
-			socket = new Socket("localhost", Game.PORT);
-			connection = new Connection(this, socket);
+			clientSocket = new Socket("localhost", Game.PORT_NUMBER);
+			clientConnection = new Connection(this, clientSocket);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -26,8 +26,8 @@ public class ClientGame extends Game{
 	
 	@Override
 	public void inputReceived(int x, int y) {
-		if (isMyTurn()) {
-			connection.sendPacket(new ClientPlayPacket(x,y));
+		if (checkTurn()) {
+			clientConnection.sendPacket(new ClientPacket(x,y)); 
 		}
 	}
 	
@@ -37,10 +37,10 @@ public class ClientGame extends Game{
 		if (object instanceof UpdatePacket) {
 			UpdatePacket packet = (UpdatePacket) object;
 			
-			fields = packet.getFields();
+			gameFields = packet.getFields();
 			currentPlayer = packet.getCurrentPlayer();
-		} else if (object instanceof GameEndPacket) {
-			GameEndPacket packet = (GameEndPacket) object;
+		} else if (object instanceof EndGamePacket) {
+			EndGamePacket packet = (EndGamePacket) object;
 			showWinner(packet.getWinner());
 		}
 		
@@ -48,10 +48,10 @@ public class ClientGame extends Game{
 	}
 	
 	@Override
-	public void close() {
+	public void closeConnection() {
 		try {
-			connection.close();
-			socket.close();
+			clientConnection.close();
+			clientSocket.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

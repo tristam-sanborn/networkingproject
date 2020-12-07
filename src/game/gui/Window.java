@@ -28,7 +28,7 @@ public class Window extends JFrame {
 	class Listener extends WindowAdapter{
 		@Override
 		public void windowClosing(WindowEvent e) {
-			game.close();
+			game.closeConnection();
 		}
 	}
 }

@@ -7,26 +7,26 @@ import game.gui.Window;
 
 public abstract class Game {
 	
-	public static final int PORT = 1234;
+	public static final int PORT_NUMBER = 1234;
 	
-	public static final int WIDTH = 600, HEIGHT = 600;
-	public static final int FIELD_WIDTH = WIDTH / 3, FIELD_HEIGHT = HEIGHT / 3;
+	public static final int WIDTH = 900, HEIGHT = 900;
+	public static final int GAME_WIDTH = WIDTH / 3, GAME_HEIGHT = HEIGHT / 3;
 	
-	public static final int NOBODY = 0, PLAYER_ONE = 1, PLAYER_TWO = 2;
-	protected int[][] fields;
+	public static final int NO_WINNER = 0, PLAYER_ONE = 1, PLAYER_TWO = 2;
+	protected int[][] gameFields;
 	
 	private Window window;
 	protected GameWindow gameWindow;
 	
 	protected int currentPlayer;
 	
-	protected int thisPlayer;
+	protected int gamePlayer;
 	
-	public Game(int thisPlayer) {
-		this.thisPlayer = thisPlayer;
-		window = new Window(this, "TicTacToe", WIDTH, HEIGHT);
+	public Game(int gamePlayer) {
+		this.gamePlayer = gamePlayer;
+		window = new Window(this, "Tic Tac Toe", WIDTH, HEIGHT);
 		gameWindow = new GameWindow(this);
-		fields = new int [3][3];
+		gameFields = new int [3][3];
 		window.add(gameWindow);
 		window.setVisible(true);
 		currentPlayer = Game.PLAYER_ONE;
@@ -38,25 +38,27 @@ public abstract class Game {
 			
 		} else if (winner == Game.PLAYER_TWO) {
 			JOptionPane.showMessageDialog(null, "The player " + winner + " has won the game! ");
+		
 		} else {
-			JOptionPane.showMessageDialog(null, "TIE!");
+			JOptionPane.showMessageDialog(null, "No winner!");
 		}
 	}
 	
-	protected boolean isMyTurn() {
-		if (thisPlayer == currentPlayer) {
+	protected boolean checkTurn() {
+		if (gamePlayer == currentPlayer) {
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 	
 	public abstract void inputReceived(int x, int y);
 	
 	public abstract void packetReceived (Object object);
 	
-	public abstract void close ();
+	public abstract void closeConnection ();
 	
-	public int[][] getFields (){
-		return fields;
+	public int[][] getGameFields (){
+		return gameFields;
 	}
 }

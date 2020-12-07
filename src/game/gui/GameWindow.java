@@ -30,19 +30,19 @@ public class GameWindow extends JPanel {
 		Graphics2D g2D = (Graphics2D) g;
 		g2D.setStroke(new BasicStroke(10));
 
-		for (int x = Game.FIELD_WIDTH; x <= Game.FIELD_WIDTH * 2; x += Game.FIELD_WIDTH) {
+		for (int x = Game.GAME_WIDTH; x <= Game.GAME_WIDTH * 2; x += Game.GAME_WIDTH) {
 			g2D.drawLine(x, 0, x, Game.HEIGHT);
 		}
-		for (int y = Game.FIELD_HEIGHT; y <= Game.FIELD_HEIGHT * 2; y += Game.FIELD_HEIGHT) {
+		for (int y = Game.GAME_HEIGHT; y <= Game.GAME_HEIGHT * 2; y += Game.GAME_HEIGHT) {
 			g2D.drawLine(0, y, Game.WIDTH, y);
 		}
 		
 		for (int x = 0; x < 3; x++) {
 			for (int y = 0; y < 3; y++) {
-				int field = game.getFields()[x][y];
-				if (field != Game.NOBODY) {
-					g2D.drawImage(Resources.letters[field - 1], x * Game.FIELD_WIDTH , y * Game.FIELD_HEIGHT, 
-							Game.FIELD_WIDTH - 5, Game.FIELD_HEIGHT - 5, null);
+				int field = game.getGameFields()[x][y];
+				if (field != Game.NO_WINNER) {
+					g2D.drawImage(Resources.letters[field - 1], x * Game.GAME_WIDTH , y * Game.GAME_HEIGHT, 
+							Game.GAME_WIDTH - 5, Game.GAME_HEIGHT - 5, null);
 				}
 			}
 		}
@@ -54,7 +54,7 @@ public class GameWindow extends JPanel {
 		public void mousePressed(MouseEvent e) {
 			
 			if (e.getButton() == MouseEvent.BUTTON1) {
-				game.inputReceived(e.getX() / Game.FIELD_WIDTH, e.getY()/Game.FIELD_HEIGHT);
+				game.inputReceived(e.getX() / Game.GAME_WIDTH, e.getY()/Game.GAME_HEIGHT);
 			}
 		}
 	}

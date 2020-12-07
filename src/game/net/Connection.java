@@ -11,35 +11,35 @@ import game.Game;
 
 public class Connection implements Runnable {
 	
-	private ObjectOutputStream outputStream;
-	private ObjectInputStream inputStream;
+	private ObjectOutputStream outToStream;
+	private ObjectInputStream inToStream;
 	
-	private boolean running;
+	private boolean gamerunning;
 	
 	private Game game;
 	
 	public Connection(Game game, Socket socket) throws IOException{
 		this.game = game;
 		
-		outputStream = new ObjectOutputStream(socket.getOutputStream());
-		inputStream = new ObjectInputStream(socket.getInputStream());
+		outToStream = new ObjectOutputStream(socket.getOutputStream());
+		inToStream = new ObjectInputStream(socket.getInputStream());
 			
 		new Thread (this).start();
 	}
 	
 	@Override
 	public void run ( ) {
-		running = true;
+		gamerunning = true;
 		
-		while(running) {
+		while(gamerunning) {
 			try {
-				Object object = inputStream.readObject();
+				Object object = inToStream.readObject();
 				game.packetReceived(object);
 				
-			}catch (EOFException | SocketException e) {				
-				running = false;
+			} catch (EOFException | SocketException e) {				
+				gamerunning = false;
 				
-			} catch (ClassNotFoundException | IOException e) {
+			} catch (IOException | ClassNotFoundException e) {
 				e.printStackTrace();
 
 			}
@@ -50,9 +50,9 @@ public class Connection implements Runnable {
 	public void sendPacket (Object object) {
 		
 		try {
-			outputStream.reset();
-			outputStream.writeObject(object);
-			outputStream.flush();
+			outToStream.reset();
+			outToStream.writeObject(object);
+			outToStream.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -61,7 +61,7 @@ public class Connection implements Runnable {
 	}
 	
 	public void close() throws IOException {
-		inputStream.close();
-		outputStream.close();
+		inToStream.close();
+		outToStream.close();
 	}
 }
