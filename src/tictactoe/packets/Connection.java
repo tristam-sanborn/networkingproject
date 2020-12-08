@@ -1,4 +1,4 @@
-package game.net;
+package tictactoe.packets;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketException;
 
-import game.Game;
+import tictactoe.Game;
 
 public class Connection implements Runnable {	// writing and receiving data
 	

@@ -1,18 +1,18 @@
-package game;
+package tictactoe;
 
 import java.io.IOException;
 import java.net.Socket;
 
-import game.net.Connection;
-import game.packets.ClientPacket;
-import game.packets.EndGamePacket;
-import game.packets.PacketUpdate;
+import tictactoe.packets.ClientPacket;
+import tictactoe.packets.Connection;
+import tictactoe.packets.EndGamePacket;
+import tictactoe.packets.PacketUpdate;
 
-public class GameClient extends Game{
+public class GameClient extends Game {
 	
-	private Socket clientSocket;
-	
+	private Socket clientSocket;	
 	private Connection clientConnection;
+	
 	
 	public GameClient() {
 		super (Game.SECOND_PLAYER);	// for the second player
@@ -20,10 +20,8 @@ public class GameClient extends Game{
 		try {
 			clientSocket = new Socket("localhost", Game.PORT_NUMBER);
 			clientConnection = new Connection(this, clientSocket);	// initialize the connection
-		
 		} catch (IOException e) {
-			
-			e.printStackTrace();
+				e.printStackTrace();
 		
 		}
 	}
@@ -32,6 +30,8 @@ public class GameClient extends Game{
 	public void inputReceived(int x, int y) {	// // inputReceived is going to take in x and y on where our mouse press
 		if (checkTurn()) {
 			clientConnection.sendPacket(new ClientPacket(x,y)); 
+	//		gamefields[x][y] = Game.SECOND_PLAYER;
+			gamePanel.repaint();
 		}
 	}
 	
@@ -39,8 +39,7 @@ public class GameClient extends Game{
 	public void packetReceived(Object object) {	
 		
 		if (object instanceof PacketUpdate) {
-			PacketUpdate packet = (PacketUpdate) object;	// update the gameFields and currentPlayer situation
-			
+			PacketUpdate packet = (PacketUpdate) object;	// update the gameFields and currentPlayer situation	
 			gameFields = packet.getGameFields();
 			currentPlayer = packet.getCurrentPlayer();
 		
@@ -50,7 +49,7 @@ public class GameClient extends Game{
 		
 		}
 		
-		gameWindow.repaint();	// after we done the PacketUpdate or EndGamePacket we need to update
+		gamePanel.repaint();	// after we done the PacketUpdate or EndGamePacket we need to update
 	}
 	
 	@Override

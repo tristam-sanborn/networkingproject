@@ -1,4 +1,4 @@
-package game;
+package tictactoe;
 
 import javax.swing.JOptionPane;
 

@@ -1,4 +1,4 @@
-package game.gui;
+package tictactoe.gui;
 
 import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
@@ -6,16 +6,16 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import game.Game;
+import tictactoe.Game;
 
-public class Window extends JFrame { //JFrame class create a window for us
+public class GameFrame extends JFrame { //JFrame class create a window for us
 	
 	//SerialVersionUID is used to ensure that during deserialization the same class (that was used during serialize process) is loaded.
 	private static final long serialVersionUID = -2767113216806410931L;
 	
 	private Game game;
 
-	public Window(Game game, String title, int width, int height) {
+	public GameFrame(Game game, String title, int width, int height) {
 		
 		super(title);	// super constructor invoke the JFrame class
 		

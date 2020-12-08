@@ -1,4 +1,4 @@
-package game.res;
+package tictactoe.res;
 
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
@@ -13,8 +13,8 @@ public class Resources {	//
 	static {	// use static as initializer
 		
 		letters = new BufferedImage[2] ;	// initialize the array
-		letters[0] = loadImage("res/x.png") ;	// load image o 
-		letters[1] = loadImage("res/o.png") ;	// load image x
+		letters[0] = loadImage("res/blueX.png") ;	// load image o 
+		letters[1] = loadImage("res/blueCircle.png") ;	// load image x
 	
 	}
 
