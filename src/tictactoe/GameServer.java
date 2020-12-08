@@ -49,8 +49,10 @@ public class GameServer extends Game {
 			int winner = checkWinner() ;
 			int countField = countEmptyField();
 			
-			if (winner != Game.NO_WINNER || countField == 9) {
+			if (winner != Game.NO_WINNER || countField == 0) {
 				endGame(winner) ;	// show the winner
+				
+			
 		}
 		}
 		

@@ -37,6 +37,7 @@ private int[][] gameFields;
         return false;
     }
 
+    
     private boolean checkVertical(int player){
         for(int x = 0; x < 3; x++) {
             int playerCount = 0;
@@ -51,6 +52,7 @@ private int[][] gameFields;
         return false;
     }
 
+    
     private boolean checkDiagonal(int player){
         int playerCount = 0;
         

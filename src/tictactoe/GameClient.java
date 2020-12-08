@@ -30,7 +30,6 @@ public class GameClient extends Game {
 	public void inputReceived(int x, int y) {	// // inputReceived is going to take in x and y on where our mouse press
 		if (checkTurn()) {
 			clientConnection.sendPacket(new ClientPacket(x,y)); 
-	//		gamefields[x][y] = Game.SECOND_PLAYER;
 			gamePanel.repaint();
 		}
 	}
@@ -49,7 +48,7 @@ public class GameClient extends Game {
 		
 		}
 		
-		gamePanel.repaint();	// after we done the PacketUpdate or EndGamePacket we need to update
+			gamePanel.repaint();	// after we done the PacketUpdate or EndGamePacket we need to update
 	}
 	
 	@Override
