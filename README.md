@@ -24,7 +24,7 @@ The features of our application.
 
 1. It would be best to have a Java integrated development environment (IDE) to run this program in your system. For example, you can download Eclipse or IntelliJ.
 
-2. You can download Eclipse at here: https://www.eclipse.org/downloads/ or you can download IntelliJ at here: https://www.jetbrains.com/idea/download/
+2. You can download Eclipse at here: [Eclipse](https://www.eclipse.org/downloads/) or you can download IntelliJ at here: [IntelliJ](https://www.jetbrains.com/idea/download/)
 
 ### Run
 
