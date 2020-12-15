@@ -42,6 +42,6 @@ Video link: https://www.youtube.com/watch?v=_j3rflgjk1o
 
 ## Contributors
 
-*Rui, Liu*
+- *Rui, Liu*
 
-*Tristam, Sanborn*
+- *Tristam, Sanborn*
