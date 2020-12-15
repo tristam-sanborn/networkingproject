@@ -36,7 +36,7 @@ The features of our application.
 
 ## Demo video
 
-This is our demo video to help you know hot to start the game and let you know the features!
+This is our demo video to help you know how to start the game and let you know the features!
 
 Video link: https://www.youtube.com/watch?v=_j3rflgjk1o
 
