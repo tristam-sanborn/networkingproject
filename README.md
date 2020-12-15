@@ -10,13 +10,13 @@ This game is programmed based on Java. This is a multiplayer Tic Tac Toe game th
 
 The features of our application.
 
-1. This game allows two players to play the game.
-2. Player can start the game.
-3. When the player enters the wrong number to start the game, they will receive a message to rerun the program.
-4. When each player makes a move, each window will update the latest action right away.
-5. When there is a winner, the game is over, and it will let both players know who is the winner of the game.
-6. When there is no winner, the game will let both players know this is a draw game.
-7. When the player closes the window, the connection will close automatically.
+- This game allows two players to play the game.
+- Player can start the game.
+- When the player enters the wrong number to start the game, they will receive a message to rerun the program.
+- When each player makes a move, each window will update the latest action right away.
+- When there is a winner, the game is over, and it will let both players know who is the winner of the game.
+- When there is no winner, the game will let both players know this is a draw game.
+- When the player closes the window, the connection will close automatically.
 
 ## Getting Started
 
@@ -24,11 +24,11 @@ The features of our application.
 
 1. It would be best to have a Java integrated development environment (IDE) to run this program in your system. For example, you can download Eclipse or IntelliJ.
 
-2. You can download Eclipse at here: [Eclipse](https://www.eclipse.org/downloads/) or you can download IntelliJ at here: [IntelliJ](https://www.jetbrains.com/idea/download/)
+2. You can download [Eclipse](https://www.eclipse.org/downloads/) or you can download [IntelliJ](https://www.jetbrains.com/idea/download/)
 
 ### Run
 
-1. You can either download the zip file from this page or copy the clone link to import this project into your IDE.
+1. You can either download the zip file from this page or copy the [clone] (https://github.com/sanbornt1atwit/networkingproject.git) link to import this project into your IDE.
 
 2. After importing this project into your IDE, you can find the main.java file and run it as a Java application.
 
@@ -42,5 +42,5 @@ Video link: https://www.youtube.com/watch?v=_j3rflgjk1o
 
 ##Contributors
 
-Tristam, Sanborn
-Rui, Liu
+*Rui, Liu*
+*Tristam, Sanborn*
