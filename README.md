@@ -28,7 +28,7 @@ The features of our application.
 
 ### Run
 
-1. You can either download the zip file from this page or copy the [clone] (https://github.com/sanbornt1atwit/networkingproject.git) link to import this project into your IDE.
+1. You can either download the zip file from this page or copy the [clone](https://github.com/sanbornt1atwit/networkingproject.git) link to import this project into your IDE.
 
 2. After importing this project into your IDE, you can find the main.java file and run it as a Java application.
 
@@ -43,4 +43,5 @@ Video link: https://www.youtube.com/watch?v=_j3rflgjk1o
 ##Contributors
 
 *Rui, Liu*
+
 *Tristam, Sanborn*
