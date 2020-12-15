@@ -40,7 +40,7 @@ This is our demo video to help you know hot to start the game and let you know t
 
 Video link: https://www.youtube.com/watch?v=_j3rflgjk1o
 
-##Contributors
+## Contributors
 
 *Rui, Liu*
 
